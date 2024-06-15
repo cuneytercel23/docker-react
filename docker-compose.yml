@@ -1,0 +1,17 @@
+version: "3"
+services:
+  web: # bu isimi biz veriyoruz gülüm
+    build:
+      context: . #bu dizindeki ..
+      dockerfile: Dockerfile.dev # dockerfile.dev dosyasını alıp build et.
+    ports: -"3000:3000"
+    volumes:
+      - /app/node_modules
+      - .:/app
+  tests: # bu isimi biz veriyoruz gülüm
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /app/node_modules
+      - .:/app
