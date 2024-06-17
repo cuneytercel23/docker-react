@@ -1,5 +1,4 @@
 sudo : required # süper kullanıcı izinlerini alıyoruz.
-
 services: 
   - docker # Bu özetle hey travis docker'ın bir kopyasına ihtiyacım var diyomuş :D
 
