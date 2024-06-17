@@ -1,0 +1,16 @@
+sudo : required # süper kullanıcı izinlerini alıyoruz.
+
+services: 
+  - docker # Bu özetle hey travis docker'ın bir kopyasına ihtiyacım var diyomuş :D
+
+before_install:
+  - docker build -t cuneytercel/docker-react -f Dockerfile.dev . # script çalışmadan önce dockerımızı build ediyoruz. dockerfiledev'i ediyoruz çünkü ilk amacımız test kodunu çalıştırmak. -t ile imageye isim veriyoruz.
+
+
+script:
+  - docker -e CI=true cuneytercel/docker-react npm run test # Burada yukarda build edilen, imageyi alıp run edip, npm run test kodunu calıştırıyoruz. Bizim sistem nasıl olduğunu not defterinde anlatıyorum.
+
+  
+
+
+
