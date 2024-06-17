@@ -1,6 +1,6 @@
 FROM node:16-alpine as builder
 
-WORKDIR '/app'
+WORKDIR /app
 
 COPY package.json .
 RUN npm install 
@@ -14,5 +14,5 @@ FROM nginx
 COPY --from=builder /app/build /usr/share/nginx/html
 # yukarıya as builder dedik ya, git oradaki app/build klasörünü al usr/.. o kısıma kopyala 
 
-#Böylece build edilen klasör artık çalışabiliyor.
+#Böylece build edilen klasör artık çalışabiliyor. ekstra bir şeye gerek yok :)
 

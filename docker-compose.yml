@@ -1,18 +1,20 @@
 version: "3"
 services:
-  web: # bu isimi biz veriyoruz gülüm
+  webs: # bu isimi biz veriyoruz gülüm
     build:
       context: . #bu dizindeki ..
       dockerfile: Dockerfile.dev # dockerfile.dev dosyasını alıp build et.
-    ports: 
+    ports:
       - "3000:3000"
     volumes:
       - /app/node_modules
       - .:/app
   tests: # bu isimi biz veriyoruz gülüm
+    stdin_open: true
     build:
       context: .
       dockerfile: Dockerfile.dev
     volumes:
       - /app/node_modules
       - .:/app
+    command: ["npm", "run", "test"]
