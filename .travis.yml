@@ -9,14 +9,3 @@ script:
   - docker run -e CI=true cuneytercel/docker-react npm run test # Burada yukarda build edilen, imageyi alıp run edip, npm run test kodunu calıştırıyoruz. Bizim sistem nasıl olduğunu not defterinde anlatıyorum.
 
 # Frontend-env.eba-ibvehdjk.us-west-1.elasticbeanstalk.com  applikasyondan kopyaladığım host
-deploy:
-  provider: elasticbeanstalk
-  region: "us-west-1"
-  app: "frontend" # dashboarddaki application ismi
-  env: "Frontend-env" # dashboarddaki env ismi
-  bucket_name: "elasticbeanstalk-us-west-1-454381124572", #s3 kısımındaki şey bunu s.et
-  bucket_path: "frontend" # uygulama ismiyle aynı koyduk
-  on: 
-    branch: master
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: "$AWS_SECRET_KEY"
