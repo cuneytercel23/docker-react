@@ -17,6 +17,6 @@ deploy:
   bucket_name: "elasticbeanstalk-us-west-1-454381124572" #s3 kısımındaki şey bunu s.et
   bucket_path: "frontend" # uygulama ismiyle aynı koyduk
   on: 
-    branch: master
+    branch: main
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: "$AWS_SECRET_KEY"
